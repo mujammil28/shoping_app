@@ -8,7 +8,7 @@ function Navbar() {
   return (
     <div className={styles.container}>
       <h1>Total : &#x20B9; {useCardContext.total}</h1>
-      <h1>Items: 0</h1>
+      <h1>Items: {useCardContext.item}</h1>
     </div>
   );
 }
