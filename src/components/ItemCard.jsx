@@ -7,7 +7,6 @@ function ItemCard({ name, price }) {
 
   const {total,setTotal,item,setItem}=useContext(cardContext);
 
-  
   const handleAdd = () => {
 
     setTotal(price+total);
