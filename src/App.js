@@ -8,8 +8,9 @@ function App() {
   const [total, setTotal] = useState(0);
   const [item, setItem] = useState(0);
   const [showCart,setShowCart]=useState(false);
+  const [cart,setCart]=useState([]);
   return (
-        <cardContext.Provider value={{total,setTotal,item,setItem,showCart,setShowCart}}>
+        <cardContext.Provider value={{total,setTotal,item,setItem,showCart,setShowCart,cart,setCart}}>
         <div className='App'>
           <h2>Shopping Cart</h2>
             <Navbar />

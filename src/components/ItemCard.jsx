@@ -3,14 +3,23 @@ import styles from "../styles/ItemCard.module.css";
 import { useContext } from "react";
 import { cardContext } from "../itemContext";
 
-function ItemCard({ name, price }) {
+function ItemCard({ id,name, price }) {
 
-  const {total,setTotal,item,setItem}=useContext(cardContext);
+  const {total,setTotal,item,setItem,cart,setCart}=useContext(cardContext);
+
 
   const handleAdd = () => {
-
-    setTotal(price+total);
-    setItem(item+1);
+       const index=cart.findIndex((item)=>item.id===id)
+        if(index===-1){
+          setCart([...cart,{id,name, price,qty:1}])
+        }else{
+          cart[index].qty++;
+          setCart(cart);
+          setTotal(total+price);
+        }
+        setItem(item+1)     
+    setTotal(total+price);
+    console.log(cart);
   };
 
   const handleRemove = () => {

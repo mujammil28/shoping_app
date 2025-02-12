@@ -16,7 +16,7 @@ function Navbar() {
         useCardContext.setShowCart(!useCardContext.showCart);
     }
   
-  
+  console.log(useCardContext)
 
   return (
     <>
